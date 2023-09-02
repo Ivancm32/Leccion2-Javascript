@@ -1,0 +1,2 @@
+Realice un programa que dado un número de 3 cifras se invierta el número y se imprima en
+pantalla el resultado.
