@@ -1,0 +1,43 @@
+
+@api = http://localhost:4000/Dispositivos
+
+GET {{api}}
+
+###
+
+POST {{api}}
+Content-Type: application/json
+
+{
+    "Nombre_Equipo" : "Equipo2",
+    "ADDR" : "00X2",
+    "Timestamp" : "2023-08-22 22:29:33"
+}
+
+###
+
+
+GET {{api}}/1
+
+
+###
+
+
+DELETE {{api}}/1
+
+###
+
+
+POST {{api}}/count
+
+
+###
+
+PUT {{api}}/2
+Content-Type: application/json
+
+{
+    "Nombre_Equipo" : "Equipo3",
+    "ADDR" : "00X2",
+    "Timestamp" : "2023-09-01 22:29:33"
+}
