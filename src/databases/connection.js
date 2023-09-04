@@ -15,10 +15,33 @@ options: {
 }
 }
 
+const dbSetting1 = {
+    user : config.dbUser ,
+    password : config.dbPassword,
+    server : config.dbServer,
+    database : config.dbname1,
+    port : parseInt(config.dbport),
+options: {
+  encrypt: true, // for azure
+  trustServerCertificate: true // change to true for local dev / self-signed certs
+}
+}
+
  export async function getConnection(){
     try {
         //returnamos el pool cuando es llamado con la configuracion
         const pool = await sql.connect(dbSetting);
+        return pool;
+    }
+    catch (error){
+        console.error(error)
+    }
+}
+
+export async function getConnection1(){
+    try {
+        //returnamos el pool cuando es llamado con la configuracion
+        const pool = await sql.connect(dbSetting1);
         return pool;
     }
     catch (error){

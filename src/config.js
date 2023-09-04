@@ -11,5 +11,6 @@ export default{
     dbPassword: process.env.DBPASS || '',
     dbServer: process.env.DBSERVER || '',
     dbname: process.env.DBNAME || '',
+    dbname1: process.env.DBNAME1 || '',
     dbport: process.env.DBPORT || ''
 }

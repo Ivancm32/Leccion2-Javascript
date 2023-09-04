@@ -6,17 +6,19 @@
   "scripts": {
     "dev": "nodemon src/Proyecto.js --exec babel-node",
     "build": "babel src -d dist",
-    "start":  "node dist/Proyecto.js"
+    "start": "node dist/Proyecto.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.10",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
-    "mssql": "^9.2.0"
+    "mssql": "^9.2.0",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
