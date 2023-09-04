@@ -328,11 +328,11 @@ async function start() {
             const pool = await getConnection1();
             await pool.request()
             .input("Nencuesta",sql.Int,NEncuesta)
-            .input("NPE",sql.Int,i)
-            .input("genero",sql.Int,sexo)
-            .input("TComida",sql.Int,ComeCCha)
-            .input("CCha",sql.Int,tipoCCha)
-            .input("CSan",sql.Int,tipoCSana)
+            .input("NPE",sql.Int,(i+1))
+            .input("genero",sql.Int,encuestados[[i,0]])
+            .input("TComida",sql.Int,encuestados[[i,1]])
+            .input("CCha",sql.Int,encuestados[[i,2]])
+            .input("CSan",sql.Int,encuestados[[i,3]])
             .input("Fecha",sql.VarChar,dat)
             .query(querys.insertaEncuesta);
         
