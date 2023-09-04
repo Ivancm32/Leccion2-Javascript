@@ -262,8 +262,14 @@ try{
     //pasamos nuestra consulta por medio de la peticion y todo este proceso es asincrono por lo que la respuesta no es inmediata
     //es por ese motivio que se utiliza el wait
     const resultado = await pool.request().query(querys.cantidadEncuestas);
-    //console.log(resultado.recordset[0].n_encuesta);
-    let NEncuesta = (parseInt(resultado.recordset[0].n_encuesta) + 1);
+    //console.log(resultado.recordset.length);
+    let NEncuesta = 0;
+    if(resultado.recordset.length == 0){
+         NEncuesta = 1;
+    }
+    else{
+         NEncuesta = (parseInt(resultado.recordset[0].n_encuesta) + 1);
+    }
 
     const readline = require('readline');
 const readlineInterface = readline.createInterface({
