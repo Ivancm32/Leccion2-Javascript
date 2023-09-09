@@ -295,6 +295,40 @@ o igual a cinco, pero menos de diez se le otorga un 20% de descuento; y si son 1
 les da un 40% de descuento. El precio de cada computadora es de $ X pesos, desarrolle un 
 programa que le permita a la empresa de computadores saber el valor de la venta con y sin 
 descuento.*/
+
+let cantCompra = 0;
+const precioComp = 1000;
+let descuento = 0;
+let montoTotalSin = 0;
+let montoTotalCon = 0;
+cantCompra = parseInt(prompt(`Ingrese la cantidad de computadoras que desea comprar, Si son menos de 5 se aplica un 10%
+ \n si son 5 o mayor pero menor de 10 se aplica un 20% , Si son mayor o igual a 10 se aplica un 40%`));
+
+
+if(cantCompra >= 10 ){
+    descuento = 0.4;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 40% es de ${montoTotalSin}`);
+}
+else if(cantCompra >= 5 ){
+    descuento = 0.2;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 20% es de ${montoTotalSin}`);
+}
+else{
+    descuento = 0.1;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de $ ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 10% es de $ ${montoTotalSin}`);
+}
     },
 
 
@@ -318,6 +352,47 @@ del 7 al 9                Este
 0                         Oeste
 
 */
+let Provincia = 0;
+let TOperacion = 0;
+let NOperacion = 0;
+let Numero = (prompt("Ingrese el numero de 4 digitos"));
+if(Numero.length === 4){
+    Provincia = parseInt(Numero.substring(0, 1));
+    TOperacion = parseInt(Numero.substring(1, 2));
+    NOperacion = parseInt(Numero.substring(2, 4));
+    switch(true){
+        case (Provincia >=1 && Provincia <=5) :
+            document.write(`la zona geografica es Norte`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        case (Provincia>4 && Provincia <=6) :
+            document.write(`la zona geografica es Sur`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        case (Provincia>7 && Provincia <=9) :
+            document.write(`la zona geografica es Este`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        default:
+            document.write(`la zona geografica es Oeste`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+
+            break;
+    }
+   
+}
+else{
+    document.write(`Error: Código no valido`);
+}
+
     },
 
     Ejercicio14: function() {
@@ -334,11 +409,82 @@ tabla.
 Determinar el valor a pagar de acuerdo a la clase, realizar un descuento del 10% si se 
 compran más de 5 pasajes sin importar la clase.*/
 
+
+let Destino = 0;
+let clase = 0;
+let montoTotal = 0;
+const descuento = 0.1;
+let MontoFinal = 0;
+let Viaje = [[]];
 let cantidadPasajes = parseInt(prompt("Ingrese la cantidad de pasajes a comprar"));
+for(let i = 0; i < cantidadPasajes; i++ ){
+     Destino = parseInt(prompt("Ingrese el destino , '1' para Bogota o '2' para Cali"));
+
+    Viaje[[i,0]] = Destino;
+    if(Destino == 1){
+        clase = parseInt(prompt("Ingrese la clase para viajar a Bogota \n opcion '1'  1 Clase 250.000  \n opcion '2'  2 Clase 180.000  \n opcion '3'  3 Clase 150.000"));
+        Viaje[[i,1]] = clase;
+        if(clase == 1){
+            Viaje[[i,2]] = 250000;
+            montoTotal += 250000;
+        }
+        else if (clase == 2){
+            Viaje[[i,2]] = 180000;
+            montoTotal += 180000;
+        }
+        else{
+            Viaje[[i,2]] = 150000;
+            montoTotal += 150000;
+        }
+    }
+    else{
+        clase = parseInt(prompt("Ingrese la clase para viajar a Cali \n opcion '1'  1 Clase 450.000  \n opcion '2'  2 Clase 350.000  \n opcion '3'  3 Clase 300.000"));
+        Viaje[[i,1]] = clase;
+        if(clase == 1){
+            Viaje[[i,2]] = 450000;
+            montoTotal += 450000;
+        }
+        else if (clase == 2){
+            Viaje[[i,2]] = 350000;
+            montoTotal += 350000;
+        }
+        else{
+            Viaje[[i,2]] = 300000;
+            montoTotal += 300000;
+        }
+    }
+    }
+
 if(cantidadPasajes > 5){
-   
+    MontoFinal = montoTotal - (montoTotal * descuento);
+}
+else{
+    MontoFinal = montoTotal;
 }
 
+
+document.write(`La cantidad de pasajes a comprar es de ${cantidadPasajes}`);
+for(let i = 0; i < cantidadPasajes; i++ ){
+    if( Viaje[[i,0]] == 1){
+        document.write(`<br/>${i + 1} pasaje para Bogota`);
+    }
+    else{
+        document.write(`<br/>${i + 1} pasaje para Cali`);
+    }
+
+    if( Viaje[[i,1]] == 1){
+        document.write(`<br/> clase seleccionada: 1 clase`);
+    }
+    else if( Viaje[[i,1]] == 2){
+        document.write(`<br/> clase seleccionada: 2 clase`);
+    }
+    else{
+        document.write(`<br/> clase seleccionada: 3 clase`);
+    }
+    document.write(`<br/>Monto del pasaje ${Viaje[[i,2]]}`);
+}
+document.write(`<br/>El monto total por los ${cantidadPasajes} pasajes es de : ${montoTotal}`);
+document.write(`<br/>El monto Final por los ${cantidadPasajes} pasajes es de : ${MontoFinal}`);
     },
 
     Ejercicio15: function() {
@@ -369,6 +515,61 @@ quedan de un 3% del monto total. Si el préstamo está entre $500000 y $1000000(
 se paga un interés del 7% y las cuotas quedan de un 5% del monto total. Y si el préstamo 
 es superior a $1000000 se paga un interés del 4% y las cuotas quedan de un 7% del monto 
 total.*/
+
+/*
+cuota mensual
+cuotas a pagar
+
+préstamo < $500000 se paga 10% interes sobre el total del prestamo y las cuotas quedan 
+3% del monto total
+
+$1000000 > préstamo > $500000 se paga 7% interes sobre el total del prestamo y las cuotas quedan 
+5% del monto total
+
+préstamo > $1000000 se paga 4% interes sobre el total del prestamo y las cuotas quedan 
+7% del monto total
+*/
+
+let prestamo;
+let cuotaMensual;
+let cantCuotas;
+let Interes;
+let montoTotal;
+
+prestamo = parseInt(prompt("Ingrese el monto del prestamo a solicitar"));
+
+
+if(prestamo > 1000000 ){
+    Interes = 0.04;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.07);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+else if(prestamo > 500000 ){
+    Interes = 0.07;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.05);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+else{
+    Interes = 0.1;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.03);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+
     }
 };
 

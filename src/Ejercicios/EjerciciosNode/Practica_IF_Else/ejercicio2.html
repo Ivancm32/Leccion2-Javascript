@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+Practica = {
+    Ejercicio2: function() {
+/* Un estudiante de la universidad tiene unos ingresos I y unos gastos G, desea saber si sus 
+ingresos del mes alcanzan para pagar todos sus gastos y la cantidad que le sobra o falta.
+*/
+
+let I = (prompt("Ingrese el monto de sus Ingresos"));
+let G = (prompt("Ingrese el monto de sus Gastos"));
+if(I >= G){
+    document.write(`El monto de Ingresos : ${I} si le alcanza para pagar sus gastos y le sobra : ${I - G}`);    
+}
+else {
+    document.write(`El monto de Ingresos : ${I} no le alcanza para pagar sus gastos y le faltan : ${-1 *(I - G)}`);   
+}
+    }
+	};
+
+
+        Practica.Ejercicio2();
+
+
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

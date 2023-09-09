@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.use(productRoutes);
 
+app.use(express.static(__dirname + '/'));
 
 //nos permite exportar a otro archivo las caracteristicas de app
 export default app;

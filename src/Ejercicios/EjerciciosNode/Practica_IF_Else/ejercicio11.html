@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+Practica = {
+
+
+    Ejercicio11: function() {
+        /*Tomando como base los resultados obtenidos en un laboratorio de análisis clínicos, realice
+un programa que le permita a un médico determinar si una persona tiene anemia o no, lo
+cual depende de su nivel de hemoglobina en la sangre, de su edad y de su sexo. Si el nivel
+de hemoglobina que tiene una persona es menor que el rango que le corresponde, se
+determina su resultado como positivo y en caso contrario como negativo. La tabla en la que
+el medico se basa para obtener el resultado es la siguient*/
+
+/*
+Edad                  Nivel
+0-1                   13 - 26 g%
+> 1 y <= 6 mesess     10 - 18 g%     
+> 6 y <= 12 meses       11 - 15 g%
+> 1 y <= 5 años       11,5 - 15 g%
+> 5 y <= 10 años     12,6 - 15.5 g%
+> 10 y <= 15 años     13 - 15.5 g%
+mujeres > 15 años     12 - 16 g%
+hombres > 15 años     14 - 18 g%
+*/
+
+let nivelEglo = 0.0;
+let valor_sexo = (prompt("Ingrese el sexo con M (de Masculino) o F (Femenino)"));
+let mayor = (prompt(" Si el paciente es mayor de 1 año ingrese 1 sino ingrese 0"));
+if (mayor == 1){
+    let edad = (prompt(" Ingrese los años del paciente"));
+if(edad > 1 && edad <= 5){
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 11.5){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+else if(edad > 5 && edad <= 10){
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 12.6){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+else if(edad > 10 && edad <= 15){
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 13){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+else{
+    if(valor_sexo == "M" || valor_sexo == "m"){
+
+        nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+        if (nivelEglo >= 14){
+            document.write(`El paciente esta negativo`);
+        }    
+        else{
+            document.write(`El paciente esta positivo`);
+        }
+    }
+    
+    else if (valor_sexo == "F" || valor_sexo == "f") {
+    
+        nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+        if (nivelEglo >= 12){
+            document.write(`El paciente esta negativo`);
+        }    
+        else{
+            document.write(`El paciente esta positivo`);
+        }
+    }
+}
+
+}
+
+else {
+    let edad = (prompt(" Ingrese los meses del paciente"));
+if(edad >= 0 && edad <= 1){
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 13){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+else if(edad > 1 && edad <= 6){
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 10){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+else{
+    nivelEglo = parseFloat(prompt("Ingrese el valor de la hemoglobina"));
+    if (nivelEglo >= 11){
+        document.write(`El paciente esta negativo`);
+    }    
+    else{
+        document.write(`El paciente esta positivo`);
+    }
+}
+    
+}
+    }
+};
+
+
+        Practica.Ejercicio11();
+ 
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+Practica = {
+
+    Ejercicio4: function() {
+/*Ahora realice el programa anterior para que el usuario ingrese:
+• El tipo de salario: Diario/Semanal/Mensual (1/2/3).
+• Salario (Cantidad en $).
+• La cantidad a partir de la cual se consideran Horas Extras Laborales.
+• El recargo (%) de las Horas Extras Laborales.
+• Horas trabajadas.
+• Salario a pagar (menos deducciones).
+• Deducciones: 
+i. Aportes a salud: $12.5%;
+ii. Aportes a pensión: 16%;
+iii. Retención en la fuente: 4%;
+iv. ICA: 1%;
+v. ARL: 1%; */
+let tipoSalario = parseInt(prompt("Ingrese la forma de pago del salario, si es Diario ingrese 1, si es Semanal ingrese 2 y si es Mensual ingrese 3"));
+let Salario = parseFloat(prompt("Ingrese su salario"));
+let Hora_Apartir_Extra = parseFloat(prompt("Ingrese la hora a partir de la cual se consideran Horas Extras Laborales"));
+let porcentajeRecargo = parseFloat(prompt("Ingrese el porcentaje de recargo por hora extra"));
+let horas = parseFloat(prompt("Ingrese las horas trabajadas"));
+let horalab = Salario / Hora_Apartir_Extra ;
+let recargo = horalab * (porcentajeRecargo) ;
+
+if(horas > Hora_Apartir_Extra){
+   
+    
+    if(tipoSalario == 1){
+
+
+        document.write(`Su desgloce de monto a pagar por la cantidad de ${horas} horas trabajadas es de : <br/> Monto Bruto  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario)} <br/> Desgloce de Deducciones : <br/> Aportes a salud :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100)} <br/> Aportes a pensión :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100)} <br/> Retención en la fuente :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100)}  <br/> ICA :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> ARL :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> Monto Neto :  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)  - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)}  `);  
+    }
+
+    else if(tipoSalario == 2){
+        document.write(`Su desgloce de monto a pagar por la cantidad de ${horas} horas trabajadas es de : <br/> Monto Bruto  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario)} <br/> Desgloce de Deducciones : <br/> Aportes a salud :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100)} <br/> Aportes a pensión :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100)} <br/> Retención en la fuente :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100)}  <br/> ICA :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> ARL :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> Monto Neto :  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)  - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)}  `);  
+  
+    }
+    else{
+
+        document.write(`Su desgloce de monto a pagar por la cantidad de ${horas} horas trabajadas es de : <br/> Monto Bruto  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario)} <br/> Desgloce de Deducciones : <br/> Aportes a salud :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100)} <br/> Aportes a pensión :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100)} <br/> Retención en la fuente :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100)}  <br/> ICA :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> ARL :  ${(((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)} <br/> Monto Neto :  ${(((horas-Hora_Apartir_Extra)*recargo) + Salario) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*12.5)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*16)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*4)/100) - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)  - (((((horas-Hora_Apartir_Extra)*recargo) + Salario)*1)/100)}  `);  
+  
+    }
+   
+}
+else {
+    document.write(`Su desgloce de monto a pagar por la cantidad de ${horas} horas trabajadas es de : <br/> Monto Bruto  ${(horas * horalab)} <br/> Desgloce de Deducciones : <br/> Aportes a salud :  ${(((horas * horalab)*12.5)/100)} <br/> Aportes a pensión :  ${(((horas * horalab)*16)/100)} <br/> Retención en la fuente :  ${(((horas * horalab)*4)/100)}  <br/> ICA :  ${(((horas * horalab)*1)/100)} <br/> ARL :  ${(((horas * horalab)*1)/100)} <br/> Monto Neto :  ${(horas * horalab) - (((horas * horalab)*12.5)/100) - (((horas * horalab)*16)/100) - (((horas * horalab)*4)/100) - (((horas * horalab)*1)/100)  - (((horas * horalab)*1)/100)}  `);  
+  
+   
+}
+    }
+};
+
+        Practica.Ejercicio4();
+   
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

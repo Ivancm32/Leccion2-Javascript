@@ -13,3 +13,10 @@ app.listen(app.get('port'));
 //imprime el puerto de escucha
 console.log('Servidor conectado al puerto :', app.get('port'));
 
+/*
+Clona el repositorio:git clone https://github.com/twbs/bootstrap.git
+Instalar con npm :npm install bootstrap@v5.3.1
+Instalar con hilo :yarn add bootstrap@v5.3.1
+Instalar con Composer :composer require twbs/bootstrap:5.3.1
+Instalar con NuGet : CSS: Install-Package bootstrapSass:Install-Package bootstrap.sass
+*/

@@ -51,45 +51,45 @@ for(let i = 0 ; i < cantidadPersonal ; i++ ){
 
 for(let i = 0 ; i < cantidadPersonal ; i++ ){
     if(encuestados[[i,0]] == 1){
-        cantHombres+=1;
+        cantHombres += 1;
     }
     else{
-        cantMujeres+=1;
+        cantMujeres += 1;
     }
 
     if(encuestados[[i,1]] == 1){
-        cantCCha+=1;
+        cantCCha += 1;
     }
     else{
-        cantSana+=1;
+        cantSana += 1;
     }
 
     if(encuestados[[i,2]] == 1){
-        Hamb+=1;    
+        Hamb += 1;    
     }
     else if(encuestados[[i,2]] == 2){
-        Pizza+=1;
+        Pizza += 1;
     }
     else if(encuestados[[i,2]] == 3){
-        Picar+=1;
+        Picar += 1;
     }
     else{
-        Hamb+=0;
-        Pizza+=0;
-        Picar+=0;
+        Hamb += 0;
+        Pizza += 0;
+        Picar += 0;
     }
 
     if(encuestados[[i,3]] == 1){
-        Fruta+=1;
+        Fruta += 1;
     }
     else if(encuestados[[i,3]] == 2){
-        jugos+=1;
+        jugos += 1;
     }
     else if(encuestados[[i,3]] == 3){
-        supleme+=1;
+        supleme += 1;
     }
     else{
-        supleme+=0;
+        supleme += 0;
         jugos+=0;
         Fruta+=0;
     }

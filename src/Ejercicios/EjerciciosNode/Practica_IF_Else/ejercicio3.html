@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+Practica = {
+
+    Ejercicio3: function() {
+/*  Un empleado trabajar 40 horas semanales en una empresa y recibe un salario de 260.000 
+pesos semanales. Si excede de las 40 horas la empresa debe pagar un recargo del 30% por 
+hora extra trabajada. Dadas las horas semanales trabajadas de un empleado, determinar el 
+salario a pagar.*/
+const SalarioSemanal = parseInt(260000);
+const horasSemanales = parseInt(40);
+let horalab = SalarioSemanal / horasSemanales ;
+let recargo = horalab * 1.30 ;
+let horas = parseFloat(prompt("Ingrese las horas trabajadas"));
+if(horas > horasSemanales){
+    document.write(`El monto a pagar es de : ${((horas-horasSemanales)*recargo) + SalarioSemanal} por la cantidad de ${horas} horas trabajadas`);    
+}
+else {
+    document.write(`El monto a pagar es de : ${horas * horalab} por la cantidad de ${horas} horas trabajadas`);   
+}
+    }
+	};
+        Practica.Ejercicio3();
+
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+Practica = {
+   
+
+    Ejercicio14: function() {
+/* En una agencia de viajes se desea realizar un programa para determinar el valor a pagar 
+por cierta cantidad de pasajes de ida saliendo desde Cúcuta, de acuerdo con la siguiente 
+tabla.
+
+               1.Bogota       2.Cali
+ 1 Clase       250.000        450.000
+ 2 Clase       180.000        350.000
+ 3 Clase       150.000        300.000
+
+
+Determinar el valor a pagar de acuerdo a la clase, realizar un descuento del 10% si se 
+compran más de 5 pasajes sin importar la clase.*/
+
+
+let Destino = 0;
+let clase = 0;
+let montoTotal = 0;
+const descuento = 0.1;
+let MontoFinal = 0;
+let Viaje = [[]];
+let cantidadPasajes = parseInt(prompt("Ingrese la cantidad de pasajes a comprar"));
+for(let i = 0; i < cantidadPasajes; i++ ){
+     Destino = parseInt(prompt("Ingrese el destino , '1' para Bogota o '2' para Cali"));
+
+    Viaje[[i,0]] = Destino;
+    if(Destino == 1){
+        clase = parseInt(prompt("Ingrese la clase para viajar a Bogota \n opcion '1'  1 Clase 250.000  \n opcion '2'  2 Clase 180.000  \n opcion '3'  3 Clase 150.000"));
+        Viaje[[i,1]] = clase;
+        if(clase == 1){
+            Viaje[[i,2]] = 250000;
+            montoTotal += 250000;
+        }
+        else if (clase == 2){
+            Viaje[[i,2]] = 180000;
+            montoTotal += 180000;
+        }
+        else{
+            Viaje[[i,2]] = 150000;
+            montoTotal += 150000;
+        }
+    }
+    else{
+        clase = parseInt(prompt("Ingrese la clase para viajar a Cali \n opcion '1'  1 Clase 450.000  \n opcion '2'  2 Clase 350.000  \n opcion '3'  3 Clase 300.000"));
+        Viaje[[i,1]] = clase;
+        if(clase == 1){
+            Viaje[[i,2]] = 450000;
+            montoTotal += 450000;
+        }
+        else if (clase == 2){
+            Viaje[[i,2]] = 350000;
+            montoTotal += 350000;
+        }
+        else{
+            Viaje[[i,2]] = 300000;
+            montoTotal += 300000;
+        }
+    }
+    }
+
+if(cantidadPasajes > 5){
+    MontoFinal = montoTotal - (montoTotal * descuento);
+}
+else{
+    MontoFinal = montoTotal;
+}
+
+
+document.write(`La cantidad de pasajes a comprar es de ${cantidadPasajes}`);
+for(let i = 0; i < cantidadPasajes; i++ ){
+    if( Viaje[[i,0]] == 1){
+        document.write(`<br/>${i + 1} pasaje para Bogota`);
+    }
+    else{
+        document.write(`<br/>${i + 1} pasaje para Cali`);
+    }
+
+    if( Viaje[[i,1]] == 1){
+        document.write(`<br/> clase seleccionada: 1 clase`);
+    }
+    else if( Viaje[[i,1]] == 2){
+        document.write(`<br/> clase seleccionada: 2 clase`);
+    }
+    else{
+        document.write(`<br/> clase seleccionada: 3 clase`);
+    }
+    document.write(`<br/>Monto del pasaje ${Viaje[[i,2]]}`);
+}
+document.write(`<br/>El monto total por los ${cantidadPasajes} pasajes es de : ${montoTotal}`);
+document.write(`<br/>El monto Final por los ${cantidadPasajes} pasajes es de : ${MontoFinal}`);
+    }
+};
+
+
+        Practica.Ejercicio14();
+      
+
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+Practica = {
+   
+    Ejercicio12: function() {
+/* Una fábrica de computadoras planea ofrecer a los clientes un descuento que dependerá del 
+número de computadoras que compre. Si las computadoras son menos de cinco se les dará 
+un 10% de descuento sobre el total de la compra; si el número de computadoras es mayor 
+o igual a cinco, pero menos de diez se le otorga un 20% de descuento; y si son 10 o más se 
+les da un 40% de descuento. El precio de cada computadora es de $ X pesos, desarrolle un 
+programa que le permita a la empresa de computadores saber el valor de la venta con y sin 
+descuento.*/
+let cantCompra = 0;
+const precioComp = 1000;
+let descuento = 0;
+let montoTotalSin = 0;
+let montoTotalCon = 0;
+cantCompra = parseInt(prompt(`Ingrese la cantidad de computadoras que desea comprar, Si son menos de 5 se aplica un 10%
+ \n si son 5 o mayor pero menor de 10 se aplica un 20% , Si son mayor o igual a 10 se aplica un 40%`));
+
+
+if(cantCompra >= 10 ){
+    descuento = 0.4;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 40% es de ${montoTotalSin}`);
+}
+else if(cantCompra >= 5 ){
+    descuento = 0.2;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 20% es de ${montoTotalSin}`);
+}
+else{
+    descuento = 0.1;
+    montoTotalCon = parseInt((cantCompra * precioComp) - ((cantCompra * precioComp) * descuento));
+    montoTotalSin = parseInt((cantCompra * precioComp));
+
+    document.write(`El monto total por la compra de  ${cantCompra} computadoras es de $ ${montoTotalCon}`);
+    document.write(`<br/>El monto total por la compra de  ${cantCompra} aplicando el descuento del 10% es de $ ${montoTotalSin}`);
+}
+    }
+};
+
+
+        Practica.Ejercicio12();
+  
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

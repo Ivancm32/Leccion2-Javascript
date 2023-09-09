@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+Practica = {
+  
+    Ejercicio16: function() {
+/* Calcular el valor de la cuota mensual y el número de cuotas a pagar, por la realización de 
+un préstamo en un banco con las siguientes condiciones: Si el préstamo es menor de 
+$500000 se paga un interés de 10% sobre el total del préstamo y las cuotas mensuales 
+quedan de un 3% del monto total. Si el préstamo está entre $500000 y $1000000(inclusive) 
+se paga un interés del 7% y las cuotas quedan de un 5% del monto total. Y si el préstamo 
+es superior a $1000000 se paga un interés del 4% y las cuotas quedan de un 7% del monto 
+total.*/
+
+let prestamo;
+let cuotaMensual;
+let cantCuotas;
+let Interes;
+let montoTotal;
+
+prestamo = parseInt(prompt("Ingrese el monto del prestamo a solicitar"));
+
+
+if(prestamo > 1000000 ){
+    Interes = 0.04;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.07);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+else if(prestamo > 500000 ){
+    Interes = 0.07;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.05);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+else{
+    Interes = 0.1;
+    montoTotal = parseInt(prestamo * (Interes + 1));
+    cuotaMensual = parseInt(montoTotal * 0.03);
+    cantCuotas = Math.ceil(parseFloat(montoTotal/cuotaMensual));
+    document.write(`El prestamo que solicito es de ${prestamo}`);
+    document.write(`<br/>El monto total del prestamo con interes es de ${montoTotal}`);
+    document.write(`<br/>El monto de cuota mensual es de ${cuotaMensual}`);
+    document.write(`<br/>La cantidad de cuotas es de ${cantCuotas}`);
+}
+
+    
+    }
+};
+
+
+        Practica.Ejercicio16();
+ 
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>

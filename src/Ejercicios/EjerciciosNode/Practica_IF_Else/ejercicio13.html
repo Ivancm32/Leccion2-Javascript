@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+Practica = {
+ 
+    Ejercicio13: function() {
+/* Una empresa maneja códigos numéricos con las siguientes características: Cada código 
+consta de cuatro dígitos: El primero representa una provincia, el segundo el tipo de operación 
+y los dos últimos, el número de la operación. Escriba un programa que lea de teclado un 
+número de cuatro dígitos, y posteriormente imprima en pantalla la siguiente información: por 
+ejemplo, si el código es 5922.
+• Provincia: 5
+• Tipo de operación: 9
+• Número de operación: 22
+En caso de que tenga más/menos de 4 dígitos en lugar del mensaje anterior, habrá que 
+imprimir en pantalla el siguiente mensaje de error: “Error: Código no valido”. De acuerdo al 
+valor de la provincia se debe especificar el área geográfica a que pertenece así:
+
+Cod Provincia        Area Geografica
+de 1 al 3                 Norte
+del 4 al 6                Sur
+del 7 al 9                Este
+0                         Oeste
+
+*/
+let Provincia = 0;
+let TOperacion = 0;
+let NOperacion = 0;
+let Numero = (prompt("Ingrese el numero de 4 digitos"));
+if(Numero.length === 4){
+    Provincia = parseInt(Numero.substring(0, 1));
+    TOperacion = parseInt(Numero.substring(1, 2));
+    NOperacion = parseInt(Numero.substring(2, 4));
+    switch(true){
+        case (Provincia >=1 && Provincia <=5) :
+            document.write(`la zona geografica es Norte`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        case (Provincia>4 && Provincia <=6) :
+            document.write(`la zona geografica es Sur`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        case (Provincia>7 && Provincia <=9) :
+            document.write(`la zona geografica es Este`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+            break;
+        default:
+            document.write(`la zona geografica es Oeste`);
+            document.write(`<br/> la provincia es : ${Provincia}`);
+            document.write(`<br/> el tipo de operacion es : ${TOperacion}`);
+            document.write(`<br/> el Numero de operacion es : ${NOperacion}`);
+
+            break;
+    }
+   
+}
+else{
+    document.write(`Error: Código no valido`);
+}
+
+    }
+};
+
+
+        Practica.Ejercicio13();
+   
+	</script>
+	<br/>
+	<a href = '/'>VOLVER AL MENU</a> <br/>
+</body>
+</html>
